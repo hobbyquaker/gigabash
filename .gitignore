@@ -1,0 +1,9 @@
+/node_modules/
+/dist/
+/build/
+/server/dist/
+/data/
+/.env
+/VERSION
+/telemetry/
+.DS_Store

@@ -1,0 +1,51 @@
+name: HTML release
+
+# Builds the self-contained single-file game and attaches it to the GitHub release of the version tag:
+#   gigabash.html   the complete game (code, graphics, sounds, music, fonts) – open it in any browser
+# If the release does not exist yet it is created with short default notes; an existing release keeps its notes.
+on:
+  push:
+    tags: ['v*.*.*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing tag to (re)build the HTML file for, e.g. v1.3.1'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  html:
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.inputs.tag || github.ref_name }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TAG }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Build
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+          cp dist/oganesson.html gigabash.html
+
+      - name: Attach to release
+        run: |
+          VERSION=${TAG#v}
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            cat > notes.md <<EOF
+          **Play:** download \`gigabash.html\` below and open it in your browser – the complete game in a single file, no installation or server needed.
+
+          **Host it with leaderboard and replays:** \`docker run -d -p 8080:8080 -e SECRET=\$(openssl rand -hex 32) -v gigabash-data:/data ghcr.io/${{ github.repository }}:$VERSION\`
+          EOF
+            gh release create "$TAG" --title "Oganesson GigaBash $VERSION" --notes-file notes.md
+          fi
+          gh release upload "$TAG" gigabash.html --clobber

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs><linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#33102E"/><stop offset="1" stop-color="#0B0A1E"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#fb)"/><path d="M25.5,50 Q32,67 38.5,50 Z" fill="#2EC4FF"/><path d="M28,50 Q32,63 36,50 Z" fill="#7CF7FF"/><path d="M30,50 Q32,58 34,50 Z" fill="#fff"/><g transform="translate(32 29) scale(.8) translate(-32 -36)">
+    <polygon points="32,2 27,14 25,30 12,42 4,54 6,60 22,56 24,64 30,66 34,66 40,64 42,56 58,60 60,54 52,42 39,30 37,14 32,2" fill="#D8E3F0" stroke="#0E1022" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <polygon points="25,31 12,43 5,54 6,59 22,55 24,62 30,64 34,64 40,62 42,55 58,59 59,54 52,43 39,31" fill="#8A9BB5"/>
+    <polygon points="32,6 28,16 27,40 30,58 34,58 37,40 36,16 32,6" fill="#EEF4FA"/>
+    <polygon points="8,50 5,55 10,57 54,57 59,55 56,50" fill="#2EC4FF" stroke="#0E1022" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <polygon points="20,44 14,50 22,52 42,52 50,50 44,44" fill="#E8573A" stroke="#0E1022" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <ellipse cx="32" cy="24" rx="4.5" ry="8" fill="#2EC4FF" stroke="#0E1022" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <ellipse cx="32" cy="26" rx="2.6" ry="5" fill="#1A6FB0"/>
+    <ellipse cx="30.6" cy="20" rx="1.4" ry="2.6" transform="rotate(0 30.6 20)" fill="#fff" opacity="0.9"/>
+    <rect x="26" y="60" width="12" height="6" rx="2" fill="#5A6880" stroke="#0E1022" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  </g></svg>

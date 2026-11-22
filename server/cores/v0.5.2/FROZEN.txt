@@ -1,0 +1,1 @@
+Eingefrorener Sim-Kern von Oganesson v0.5.2 (Commit 7c32e28). Nicht ändern.
